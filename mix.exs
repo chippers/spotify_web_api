@@ -19,6 +19,10 @@ defmodule Spotify.Mixfile do
       package: [
         licenses: ["mit"],
         maintainers: ["Chip Reed <chip@chip.sh>"],
+        links: %{
+          "Repository": "https://github.com/chippers/spotify_web_api",
+          "Spotify Web API": "https://beta.developer.spotify.com/documentation/web-api/",
+        }
       ]
     ]
   end
