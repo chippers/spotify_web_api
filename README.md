@@ -1,21 +1,21 @@
-# Spotify
+# Spotify Web API
 
-**TODO: Add description**
+Library to help with accessing the Spotify Web API.
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `spotify` to your list of dependencies in `mix.exs`:
+by adding `spotify_web_api` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:spotify, "~> 0.1.0"}
+    {:spotify_web_api, "~> 0.1.0"}
   ]
 end
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/spotify](https://hexdocs.pm/spotify).
+be found at [https://hexdocs.pm/spotify_web_api](https://hexdocs.pm/spotify_web_api).
 

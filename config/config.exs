@@ -28,7 +28,7 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 
-config :spotify,
+config :spotify_web_api,
   client_id: "fake_id",
   client_secret: "fake_secret",
   callback_url: "fake_callback"
