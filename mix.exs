@@ -12,7 +12,13 @@ defmodule Spotify.Mixfile do
 
       name: "Spotify Web API",
       docs: [
-        groups_for_modules: groups_for_modules()
+        groups_for_modules: groups_for_modules(),
+        source_url: "https://github.com/chippers/spotify_web_api",
+        homepage_url: "https://github.com/chippers/spotify_web_api",
+      ],
+      package: [
+        licenses: ["mit"],
+        maintainers: ["Chip Reed <chip@chip.sh>"],
       ]
     ]
   end
