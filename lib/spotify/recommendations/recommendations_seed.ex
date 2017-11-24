@@ -1,6 +1,8 @@
 defmodule Spotify.Recommendations.RecommendationsSeed do
   # https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#recommendations-seed-object
   @moduledoc """
+    A Recommendations Seed object.
+
     | Key   | Value Description |
     | :---- | :---------------- |
     | afterFilteringSize	|	The number of tracks available after min_* and max_* filters have been applied. |
