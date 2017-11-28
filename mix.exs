@@ -79,8 +79,7 @@ defmodule Spotify.Mixfile do
       ],
       "Recommendations": [
         Spotify.Recommendations,
-        Spotify.Recommendations.Recommendations,
-        Spotify.Recommendations.RecommendationsSeed,
+        Spotify.Recommendations.Seed,
       ],
       "Users": [
         Spotify.Users,

@@ -1,4 +1,4 @@
-defmodule Spotify.Recommendations.RecommendationsSeed do
+defmodule Spotify.Recommendations.Seed do
   @moduledoc """
     A Recommendations Seed object.
 

@@ -1,17 +1,19 @@
 defmodule Spotify.Recommendations do
   @moduledoc """
-    Spotify Recommendations.
+    A Recommendations object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#recommendations-object)
   """
 
-  alias Spotify.Recommendations.RecommendationsSeed
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Recommendations
+  alias Spotify.Recommendations.Seed
   alias Spotify.Tracks.TrackSimple
 
   @typedoc """
     An array of recommendation seed objects.
   """
-  @type seeds :: [RecommendationsSeed.t]
+  @type seeds :: [Seed.t]
 
   @typedoc """
     An array of track object (simplified) ordered according to the parameters supplied.
@@ -51,4 +53,22 @@ defmodule Spotify.Recommendations do
     The entity type of this seed. One of artist , track or genre.
   """
   @type type :: String.t
+
+  defstruct [
+    :seeds,
+    :tracks,
+  ]
+
+  @typedoc "A Recommendations object."
+  @type t :: %__MODULE__{
+               seeds: Recommendations.seeds,
+               tracks: Recommendations.tracks,
+             }
+
+  def as do
+    %__MODULE__{
+      seeds: [Seed.as()],
+      tracks: [TrackSimple.as()]
+    }
+  end
 end
