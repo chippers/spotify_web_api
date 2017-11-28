@@ -1,4 +1,4 @@
-defmodule Spotify.ExternalUrls do
+defmodule Spotify.Models.ExternalUrls do
   @moduledoc """
      An object that holds keys and values.
 

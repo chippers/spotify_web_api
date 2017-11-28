@@ -1,12 +1,12 @@
-defmodule Spotify.Tracks.TrackLink do
+defmodule Spotify.Models.Tracks.TrackLink do
   @moduledoc """
     A Track Link object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#track-link)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Tracks
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Tracks
 
   defstruct [
     :external_urls,

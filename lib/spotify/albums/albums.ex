@@ -1,15 +1,15 @@
-defmodule Spotify.Albums do
+defmodule Spotify.Models.Albums do
   @moduledoc """
     For manipulating albums.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/albums/)
   """
 
-  alias Spotify.Albums.AlbumFull
-  alias Spotify.Artists.ArtistSimple
-  alias Spotify.Tracks.TrackSimple
-  alias Spotify.Pagings.Paging
-  alias Spotify.{Copyright, ExternalUrls, ExternalIds, Image, Timestamp}
+  alias Spotify.Models.Albums.AlbumFull
+  alias Spotify.Models.Artists.ArtistSimple
+  alias Spotify.Models.Tracks.TrackSimple
+  alias Spotify.Models.Pagings.Paging
+  alias Spotify.Models.{Copyright, ExternalUrls, ExternalIds, Image, Timestamp}
 
   @typedoc """
     The type of the album: one of `album` , `single` , or `compilation`.

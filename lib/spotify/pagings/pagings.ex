@@ -1,4 +1,4 @@
-defmodule Spotify.Pagings do
+defmodule Spotify.Models.Pagings do
   @moduledoc """
     Pagings Objects.
   """
@@ -26,7 +26,7 @@ defmodule Spotify.Pagings do
   @typedoc """
     The cursors used to find the next set of items.
   """
-  @type cursors :: Spotify.Cursor.t
+  @type cursors :: Spotify.Models.Cursor.t
 
   @typedoc """
     The offset of the items returned (as set in the query or by default).

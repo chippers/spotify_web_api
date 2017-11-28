@@ -1,12 +1,12 @@
-defmodule Spotify.Users do
+defmodule Spotify.Models.Users do
   @moduledoc """
     For manipulating users.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/users-profile/)
   """
 
-  alias Spotify.{ExternalUrls, Followers, Image, Timestamp, Context}
-  alias Spotify.Tracks.TrackSimple
+  alias Spotify.Models.{ExternalUrls, Followers, Image, Timestamp, Context}
+  alias Spotify.Models.Tracks.TrackSimple
 
   @typedoc """
     The user’s date-of-birth. This field is only available when

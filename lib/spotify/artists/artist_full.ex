@@ -1,14 +1,14 @@
-defmodule Spotify.Artists.ArtistFull do
+defmodule Spotify.Models.Artists.ArtistFull do
   @moduledoc """
     A full Artist object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#artist-object-full)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Artists
-  alias Spotify.Followers
-  alias Spotify.Image
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Artists
+  alias Spotify.Models.Followers
+  alias Spotify.Models.Image
 
   defstruct [
     :external_urls,

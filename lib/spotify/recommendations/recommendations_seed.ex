@@ -1,12 +1,12 @@
-defmodule Spotify.Recommendations.RecommendationsSeed do
+defmodule Spotify.Models.Recommendations.RecommendationsSeed do
   @moduledoc """
     A Recommendations Seed object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#recommendations-seed-object)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Recommendations
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Recommendations
 
   defstruct [
     :afterFilteringSize,

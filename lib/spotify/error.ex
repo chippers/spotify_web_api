@@ -1,11 +1,11 @@
-defmodule Spotify.Error do
+defmodule Spotify.Models.Error do
   @moduledoc """
     An object containing error information.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#error-object)
   """
 
-  @behaviour Spotify.ObjectModel
+  @behaviour Spotify.Models.ObjectModel
 
   @typedoc """
     The HTTP status code (also returned in the response header;

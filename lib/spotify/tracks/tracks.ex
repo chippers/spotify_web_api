@@ -1,14 +1,14 @@
-defmodule Spotify.Tracks do
+defmodule Spotify.Models.Tracks do
   @moduledoc """
     For manipulating tracks.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/tracks/)
   """
 
-  alias Spotify.Tracks.{TrackFull, TrackLink}
-  alias Spotify.{ExternalIds, ExternalUrls, Restrictions, Timestamp}
-  alias Spotify.Albums.AlbumSimple
-  alias Spotify.Artists.ArtistSimple
+  alias Spotify.Models.Tracks.{TrackFull, TrackLink}
+  alias Spotify.Models.{ExternalIds, ExternalUrls, Restrictions, Timestamp}
+  alias Spotify.Models.Albums.AlbumSimple
+  alias Spotify.Models.Artists.ArtistSimple
 
   @typedoc """
     The album on which the track appears.

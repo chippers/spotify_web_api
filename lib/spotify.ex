@@ -23,7 +23,7 @@ defmodule Spotify do
 
   ## Examples
 
-      iex> Spotify.hello
+      iex> Spotify.Models.hello
       :world
 
   """

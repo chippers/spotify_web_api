@@ -1,14 +1,14 @@
-defmodule Spotify.Playlists.PlaylistTrack do
+defmodule Spotify.Models.Playlists.PlaylistTrack do
   @moduledoc """
     A Playlist Track object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#playlist-track-object)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Playlists
-  alias Spotify.Users.UserPublic
-  alias Spotify.Tracks.TrackFull
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Playlists
+  alias Spotify.Models.Users.UserPublic
+  alias Spotify.Models.Tracks.TrackFull
 
   defstruct [
     :added_at,
@@ -18,7 +18,7 @@ defmodule Spotify.Playlists.PlaylistTrack do
   ]
 
   @typedoc "A Playlist Track object."
-  @type t :: %Spotify.Playlists.PlaylistTrack{
+  @type t :: %Spotify.Models.Playlists.PlaylistTrack{
                added_at: Playlists.added_at,
                added_by: Playlists.added_by,
                is_local: Playlists.is_local,
@@ -33,7 +33,7 @@ defmodule Spotify.Playlists.PlaylistTrack do
   end
 end
 
-defimpl Poison.Decoder, for: Spotify.Playlists.PlaylistTrack do
+defimpl Poison.Decoder, for: Spotify.Models.Playlists.PlaylistTrack do
   def decode(%{added_at: added_at} = playlist_track, _options) do
     case DateTime.from_iso8601(added_at) do
       {:ok, datetime} -> %{playlist_track | added_at: datetime}

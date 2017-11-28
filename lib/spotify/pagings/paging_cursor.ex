@@ -1,4 +1,4 @@
-defmodule Spotify.Pagings.PagingCursor do
+defmodule Spotify.Models.Pagings.PagingCursor do
   @moduledoc """
     The cursor-based paging object is a container for a set of objects.
 
@@ -8,8 +8,8 @@ defmodule Spotify.Pagings.PagingCursor do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#cursor-based-paging-object)
   """
 
-  alias Spotify.Pagings
-  alias Spotify.Cursor
+  alias Spotify.Models.Pagings
+  alias Spotify.Models.Cursor
 
   defstruct [
     :href,

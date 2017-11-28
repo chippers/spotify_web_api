@@ -1,14 +1,14 @@
-defmodule Spotify.Tracks.TrackSimple do
+defmodule Spotify.Models.Tracks.TrackSimple do
   @moduledoc """
     A simple Track object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#track-object-simplified)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Tracks
-  alias Spotify.Tracks.TrackLink
-  alias Spotify.Artists.ArtistSimple
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Tracks
+  alias Spotify.Models.Tracks.TrackLink
+  alias Spotify.Models.Artists.ArtistSimple
 
   defstruct [
     :artists,

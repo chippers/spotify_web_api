@@ -1,12 +1,12 @@
-defmodule Spotify.Category do
+defmodule Spotify.Models.Category do
   @moduledoc """
     An object containing category information.
   
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#category-object)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Image
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Image
 
   @typedoc """
     A link to the Web API endpoint returning full details of the category.

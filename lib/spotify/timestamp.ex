@@ -1,4 +1,4 @@
-defmodule Spotify.Timestamp do
+defmodule Spotify.Models.Timestamp do
   @moduledoc """
     The Spotify Web API's version of timestamps.
 

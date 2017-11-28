@@ -1,11 +1,11 @@
-defmodule Spotify.Copyright do
+defmodule Spotify.Models.Copyright do
   @moduledoc """
     An object containing copyright statements.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#copyright-object)
   """
 
-  @behaviour Spotify.ObjectModel
+  @behaviour Spotify.Models.ObjectModel
 
   @typedoc """
     The copyright text for this album.

@@ -1,14 +1,14 @@
-defmodule Spotify.Users.UserPublic do
+defmodule Spotify.Models.Users.UserPublic do
   @moduledoc """
     A public User object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#user-object-public)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Users
-  alias Spotify.Image
-  alias Spotify.Followers
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Users
+  alias Spotify.Models.Image
+  alias Spotify.Models.Followers
 
   defstruct [
     :display_name,

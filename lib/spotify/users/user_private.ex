@@ -1,14 +1,14 @@
-defmodule Spotify.Users.UserPrivate do
+defmodule Spotify.Models.Users.UserPrivate do
   @moduledoc """
     A private User object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#user-object-private)
   """
 
-  @behaviour Spotify.ObjectModel
-  alias Spotify.Users
-  alias Spotify.Image
-  alias Spotify.Followers
+  @behaviour Spotify.Models.ObjectModel
+  alias Spotify.Models.Users
+  alias Spotify.Models.Image
+  alias Spotify.Models.Followers
 
   defstruct [
     :birthdate,
