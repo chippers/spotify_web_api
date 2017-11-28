@@ -26,7 +26,7 @@ defmodule Spotify.Tracks do
   	A list of the countries in which the track can be played,
   	identified by their ISO 3166-1 alpha-2 code.
   """
-  @type available_markets :: [String.t]
+  @type available_markets :: [String.t] | nil
 
   @typedoc """
   	The disc number (usually 1 unless the album consists of more than one disc).
@@ -76,7 +76,7 @@ defmodule Spotify.Tracks do
   	The track in the linked_from object contains information
   	about the originally requested track.
   """
-  @type linked_from :: TrackLink.t
+  @type linked_from :: TrackLink.t | nil
 
   @typedoc """
   	Part of the response when Track Relinking is applied,
