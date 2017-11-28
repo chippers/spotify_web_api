@@ -11,7 +11,7 @@ defmodule Spotify.Timestamp do
   """
 
   @typedoc """
-    A `DateTime` if parsed sucessfully, otherwise a string`.
+    A `DateTime` if parsed sucessfully, otherwise a `string`.
   """
   @type t :: DateTime.t | String.t
 end
