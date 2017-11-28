@@ -1,14 +1,14 @@
 defmodule Spotify.Users.PlayHistory do
-  # https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#play-history-object
   @moduledoc """
     A Play History object.
 
-    | Key   | Value Description |
-    | :---- | :---------------- |
-    | track	| The track the user listened to. |
-    | played_at	|	The date and time the track was played. |
-    | context	|	The context the track was played from. |
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#play-history-object)
   """
+
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Users
+  alias Spotify.Tracks.TrackSimple
+  alias Spotify.Context
 
   defstruct [
     :track,
@@ -16,9 +16,17 @@ defmodule Spotify.Users.PlayHistory do
     :context,
   ]
 
-  @type t :: %Spotify.Users.PlayHistory{
-               track: Spotify.Tracks.TrackSimple.t,
-               played_at: Spotify.Timestamp.t,
-               context: Spotify.Context.t,
+  @typedoc "A Play History object."
+  @type t :: %__MODULE__{
+               track: Users.track,
+               played_at: Users.played_at,
+               context: Users.context,
              }
+
+  def as do
+    %__MODULE__{
+      track: TrackSimple.as(),
+      context: Context.as()
+    }
+  end
 end

@@ -1,21 +1,28 @@
 defmodule Spotify.Tracks.SavedTrack do
-  # https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#saved-track-object
   @moduledoc """
     A Saved Track object, holding a full track object.
 
-    | Key   | Value Description |
-    | :---- | :---------------- |
-    | added_at | The date and time the track was saved. |
-    | track | Information about the track. |
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#saved-track-object)
   """
+
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Tracks
+  alias Spotify.Tracks.TrackFull
 
   defstruct [
     :added_at,
     :track,
   ]
 
-  @type t :: %Spotify.Tracks.SavedTrack{
-               added_at: Spotify.Timestamp.t,
-               track: Spotify.Tracks.TrackFull.t,
+  @typedoc "A Saved Track object."
+  @type t :: %__MODULE__{
+               added_at: Tracks.added_at,
+               track: Tracks.track,
              }
+
+  def as do
+    %__MODULE__{
+      track: TrackFull.as()
+    }
+  end
 end

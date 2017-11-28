@@ -1,23 +1,16 @@
 defmodule Spotify.Playlists.PlaylistSimple do
-  # https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#playlist-object-simplified
   @moduledoc """
     A simplified Playlist object.
 
-    | Key   | Value Description |
-    | :---- | :---------------- |
-    | collaborative	|	`true` if the owner allows other users to modify the playlist. |
-    | external_urls	|	Known external URLs for this playlist. |
-    | href	|	A link to the Web API endpoint providing full details of the playlist. |
-    | id	|	The Spotify ID for the playlist. |
-    | images	|	Images for the playlist. The array may be empty or contain up to three images. The images are returned by size in descending order. See Working with Playlists.Note: If returned, the source URL for the image ( url ) is temporary and will expire in less than a day. |
-    | name	|	The name of the playlist. |
-    | owner	|	The user who owns the playlist |
-    | public	| The playlist’s public/private status: `true` the playlist is public, `false` the playlist is private, `null` the playlist status is not relevant. For more about public/private status, see Working with Playlists. |
-    | snapshot_id	|	The version identifier for the current playlist. Can be supplied in other requests to target a specific playlist version: see Remove tracks from a playlist |
-    | tracks	|	Information about the tracks of the playlist. |
-    | type	|	The object type: “playlist” |
-    | uri	|	The Spotify URI for the playlist. |
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#playlist-object-simplified)
   """
+
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Playlists
+  alias Spotify.Playlists.PlaylistTrack
+  alias Spotify.Pagings.Paging
+  alias Spotify.Users.UserPublic
+  alias Spotify.Image
 
   defstruct [
     :collaborative,
@@ -34,19 +27,27 @@ defmodule Spotify.Playlists.PlaylistSimple do
     :uri,
   ]
 
-  @type t :: %Spotify.Playlists.PlaylistSimple{
-               collaborative: boolean,
-               external_urls: Spotify.ExternalUrls.t,
-               href: String.t,
-               id: String.t,
-               images: [Spotify.Image.t],
-               name: String.t,
-               owner: Spotify.Users.UserPublic.t,
-               public: boolean | nil,
-               snapshot_id: String.t,
-               tracks: Spotify.Pagings.Paging.t(Spotify.Playlists.PlaylistTrack.t),
-               type: String.t,
-               uri: String.t,
+  @typedoc "A simplified Playlist object."
+  @type t :: %__MODULE__{
+               collaborative: Playlists.collaborative,
+               external_urls: Playlists.external_urls,
+               href: Playlists.href,
+               id: Playlists.id,
+               images: Playlists.images,
+               name: Playlists.name,
+               owner: Playlists.owner,
+               public: Playlists.public,
+               snapshot_id: Playlists.snapshot_id,
+               tracks: Playlists.tracks,
+               type: Playlists.type,
+               uri: Playlists.uri,
              }
 
+  def as do
+    %__MODULE__{
+      images: [Image.as()],
+      owner: UserPublic.as(),
+      tracks: Paging.wrap(PlaylistTrack.as())
+    }
+  end
 end

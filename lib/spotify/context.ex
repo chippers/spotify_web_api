@@ -1,15 +1,32 @@
 defmodule Spotify.Context do
-  # https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#context-object
   @moduledoc """
-    A Context object.
-
-    | Key   | Value Description |
-    | :---- | :---------------- |
-    | type	| The object type, e.g. “artist”, “playlist”, “album”. |
-    | href	| A link to the Web API endpoint providing full details of the track. |
-    | external_urls	|	External URLs for this context. |
-    | uri	| The Spotify URI for the context. |
+   A Context object.
+  
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#context-object)
   """
+
+  @behaviour Spotify.ObjectModel
+  alias Spotify.ExternalUrls
+
+  @typedoc """
+    The object type, e.g. `artist`, `playlist`, `album`.
+  """
+  @type type :: String.t
+
+  @typedoc """
+    A link to the Web API endpoint providing full details of the track.
+  """
+  @type href :: String.t
+
+  @typedoc """
+    External URLs for this context.
+  """
+  @type external_urls :: ExternalUrls.t
+
+  @typedoc """
+    The Spotify URI for the context.
+  """
+  @type uri :: String.t
 
   defstruct [
     :type,
@@ -18,10 +35,20 @@ defmodule Spotify.Context do
     :uri,
   ]
 
-  @type t :: %Spotify.Context{
-               type: String.t,
-               href: String.t,
-               external_urls: Spotify.ExternalUrls.t,
-               uri: String.t,
+  @typedoc """
+    The full Context object.
+
+    Contains all the values listed in the
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#context-object)
+  """
+  @type t :: %__MODULE__{
+               type: __MODULE__.type,
+               href: __MODULE__.href,
+               external_urls: __MODULE__.external_urls,
+               uri: __MODULE__.uri,
              }
+
+  def as do
+    %__MODULE__{}
+  end
 end

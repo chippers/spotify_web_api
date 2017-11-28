@@ -2,14 +2,11 @@ defmodule Spotify.Tracks.TrackLink do
   @moduledoc """
     A Track Link object.
 
-    | Key   | Value Description |
-    | :---- | :---------------- |
-    | external_urls	| 	Known external URLs for this track. |
-    | href	|	A link to the Web API endpoint providing full details of the track. |
-    | id	|	The Spotify ID for the track. |
-    | type	|	The object type: “track”. |
-    | uri	|	The Spotify URI for the track.  |
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#track-link)
   """
+
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Tracks
 
   defstruct [
     :external_urls,
@@ -19,11 +16,16 @@ defmodule Spotify.Tracks.TrackLink do
     :uri,
   ]
 
-  @type t :: %Spotify.Tracks.TrackLink{
-               external_urls: Spotify.ExternalUrls.t,
-               href: String.t,
-               id: String.t,
-               type: String.t,
-               uri: String.t,
+  @typedoc "A Track Link object."
+  @type t :: %__MODULE__{
+               external_urls: Tracks.external_urls,
+               href: Tracks.href,
+               id: Tracks.id,
+               type: Tracks.type,
+               uri: Tracks.uri,
              }
+
+  def as do
+    %__MODULE__{}
+  end
 end

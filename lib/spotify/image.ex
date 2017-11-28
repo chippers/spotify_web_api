@@ -1,14 +1,26 @@
 defmodule Spotify.Image do
-  # https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#image-object
   @moduledoc """
     An object containing image information.
 
-    | Key   | Value Description |
-    | :---- | :---------------- |
-    |height	|	The image height in pixels. If unknown: null or not returned. |
-    |url	  |	The source URL of the image. |
-    |width	|	The image width in pixels. If unknown: null or not returned. |
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#image-object)
   """
+
+  @behaviour Spotify.ObjectModel
+
+  @typedoc """
+    The image height in pixels. If unknown: `null` or not returned.
+  """
+  @type height :: integer
+
+  @typedoc """
+    The source URL of the image.
+  """
+  @type url :: String.t
+
+  @typedoc """
+    The image width in pixels. If unknown: `null` or not returned.
+  """
+  @type width :: integer
 
   defstruct [
     :height,
@@ -16,9 +28,19 @@ defmodule Spotify.Image do
     :width,
   ]
 
-  @type t :: %Spotify.Image{
-               height: integer,
-               url: String.t,
-               width: integer,
+  @typedoc """
+    The full Image object.
+
+    Contains all the values listed in the
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#image-object)
+  """
+  @type t :: %__MODULE__{
+               height: __MODULE__.height,
+               url: __MODULE__.url,
+               width: __MODULE__.width,
              }
+
+  def as do
+    %__MODULE__{}
+  end
 end
