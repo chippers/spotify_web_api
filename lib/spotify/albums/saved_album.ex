@@ -1,13 +1,13 @@
-defmodule Spotify.Models.Albums.SavedAlbum do
+defmodule Spotify.Albums.SavedAlbum do
   @moduledoc """
     A saved Album object, holding a full album object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#saved-album-object)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Albums
-  alias Spotify.Models.Albums.AlbumFull
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Albums
+  alias Spotify.Albums.AlbumFull
 
   defstruct [
     :added_at,
@@ -27,7 +27,7 @@ defmodule Spotify.Models.Albums.SavedAlbum do
   end
 end
 
-defimpl Poison.Decoder, for: Spotify.Models.Albums.SavedAlbum do
+defimpl Poison.Decoder, for: Spotify.Albums.SavedAlbum do
   def decode(%{added_at: added_at} = saved_album, _options) do
     case DateTime.from_iso8601(added_at) do
       {:ok, datetime} -> %{saved_album | added_at: datetime}

@@ -1,16 +1,16 @@
-defmodule Spotify.Models.Playlists.PlaylistSimple do
+defmodule Spotify.Playlists.PlaylistSimple do
   @moduledoc """
     A simplified Playlist object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#playlist-object-simplified)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Playlists
-  alias Spotify.Models.Playlists.PlaylistTrack
-  alias Spotify.Models.Pagings.Paging
-  alias Spotify.Models.Users.UserPublic
-  alias Spotify.Models.Image
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Playlists
+  alias Spotify.Playlists.PlaylistTrack
+  alias Spotify.Pagings.Paging
+  alias Spotify.Users.UserPublic
+  alias Spotify.Image
 
   defstruct [
     :collaborative,

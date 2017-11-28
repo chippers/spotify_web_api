@@ -1,11 +1,11 @@
-defmodule Spotify.Models.AudioFeatures do
+defmodule Spotify.AudioFeatures do
   @moduledoc """
     A complete audio features object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#audio-features-object)
   """
 
-  @behaviour Spotify.Models.ObjectModel
+  @behaviour Spotify.ObjectModel
 
   @typedoc """
     A float measurement of Acousticness.

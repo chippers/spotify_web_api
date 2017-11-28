@@ -1,11 +1,11 @@
-defmodule Spotify.Models.Artists do
+defmodule Spotify.Artists do
   @moduledoc """
     For manipulating artists.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/artists/)
   """
 
-  alias Spotify.Models.{ExternalUrls, Followers, Image}
+  alias Spotify.{ExternalUrls, Followers, Image}
 
   @typedoc """
     Known external URLs for this artist.

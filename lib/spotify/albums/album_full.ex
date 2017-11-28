@@ -1,16 +1,16 @@
-defmodule Spotify.Models.Albums.AlbumFull do
+defmodule Spotify.Albums.AlbumFull do
   @moduledoc """
     A full album object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#album-object-full)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Albums
-  alias Spotify.Models.Artists.ArtistSimple
-  alias Spotify.Models.{Image, Copyright}
-  alias Spotify.Models.Pagings.Paging
-  alias Spotify.Models.Tracks.TrackSimple
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Albums
+  alias Spotify.Artists.ArtistSimple
+  alias Spotify.{Image, Copyright}
+  alias Spotify.Pagings.Paging
+  alias Spotify.Tracks.TrackSimple
 
   defstruct [
     :album_type,

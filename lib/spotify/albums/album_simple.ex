@@ -1,14 +1,14 @@
-defmodule Spotify.Models.Albums.AlbumSimple do
+defmodule Spotify.Albums.AlbumSimple do
   @moduledoc """
     A simplified album object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#album-object-simplified)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Albums
-  alias Spotify.Models.Artists.ArtistSimple
-  alias Spotify.Models.Image
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Albums
+  alias Spotify.Artists.ArtistSimple
+  alias Spotify.Image
 
   defstruct [
     :album_type,

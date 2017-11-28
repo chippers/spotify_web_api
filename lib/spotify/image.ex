@@ -1,11 +1,11 @@
-defmodule Spotify.Models.Image do
+defmodule Spotify.Image do
   @moduledoc """
     An object containing image information.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#image-object)
   """
 
-  @behaviour Spotify.Models.ObjectModel
+  @behaviour Spotify.ObjectModel
 
   @typedoc """
     The image height in pixels. If unknown: `null` or not returned.

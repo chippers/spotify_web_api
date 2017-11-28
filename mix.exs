@@ -1,4 +1,4 @@
-defmodule Spotify.Models.Mixfile do
+defmodule Spotify.Mixfile do
   use Mix.Project
 
   def project do
@@ -47,60 +47,60 @@ defmodule Spotify.Models.Mixfile do
 
   defp groups_for_modules do
     [
-      "Album Models": [
-        Spotify.Models.Albums,
-        Spotify.Models.Albums.AlbumFull,
-        Spotify.Models.Albums.AlbumSimple,
-        Spotify.Models.Albums.SavedAlbum,
+      "Albums": [
+        Spotify.Albums,
+        Spotify.Albums.AlbumFull,
+        Spotify.Albums.AlbumSimple,
+        Spotify.Albums.SavedAlbum,
       ],
-      "Artist Models": [
-        Spotify.Models.Artists,
-        Spotify.Models.Artists.ArtistFull,
-        Spotify.Models.Artists.ArtistSimple
+      "Artists": [
+        Spotify.Artists,
+        Spotify.Artists.ArtistFull,
+        Spotify.Artists.ArtistSimple
       ],
-      "Track Models": [
-        Spotify.Models.Tracks,
-        Spotify.Models.Tracks.TrackFull,
-        Spotify.Models.Tracks.TrackSimple,
-        Spotify.Models.Tracks.TrackLink,
-        Spotify.Models.Tracks.SavedTrack
+      "Tracks": [
+        Spotify.Tracks,
+        Spotify.Tracks.TrackFull,
+        Spotify.Tracks.TrackSimple,
+        Spotify.Tracks.TrackLink,
+        Spotify.Tracks.SavedTrack
       ],
 
-      "Paging Models": [
-        Spotify.Models.Pagings,
-        Spotify.Models.Pagings.Paging,
-        Spotify.Models.Pagings.PagingCursor,
+      "Pagings": [
+        Spotify.Pagings,
+        Spotify.Pagings.Paging,
+        Spotify.Pagings.PagingCursor,
       ],
-      "Playlist Models": [
-        Spotify.Models.Playlists,
-        Spotify.Models.Playlists.PlaylistSimple,
-        Spotify.Models.Playlists.PlaylistTrack,
-        Spotify.Models.Playlists.PlaylistFull,
+      "Playlists": [
+        Spotify.Playlists,
+        Spotify.Playlists.PlaylistSimple,
+        Spotify.Playlists.PlaylistTrack,
+        Spotify.Playlists.PlaylistFull,
       ],
-      "Recommendations Models": [
-        Spotify.Models.Recommendations,
-        Spotify.Models.Recommendations.Recommendations,
-        Spotify.Models.Recommendations.RecommendationsSeed,
+      "Recommendations": [
+        Spotify.Recommendations,
+        Spotify.Recommendations.Recommendations,
+        Spotify.Recommendations.RecommendationsSeed,
       ],
-      "User Models": [
-        Spotify.Models.Users,
-        Spotify.Models.Users.UserPrivate,
-        Spotify.Models.Users.UserPublic,
-        Spotify.Models.Users.PlayHistory
+      "Users": [
+        Spotify.Users,
+        Spotify.Users.UserPrivate,
+        Spotify.Users.UserPublic,
+        Spotify.Users.PlayHistory
       ],
-      "Miscellaneous Models": [
-        Spotify.Models.ExternalIds,
-        Spotify.Models.ExternalUrls,
-        Spotify.Models.Copyright,
-        Spotify.Models.Image,
-        Spotify.Models.Followers,
-        Spotify.Models.AudioFeatures,
-        Spotify.Models.Category,
-        Spotify.Models.Context,
-        Spotify.Models.Cursor,
-        Spotify.Models.Error,
-        Spotify.Models.Restrictions,
-        Spotify.Models.Timestamp,
+      "Miscellaneous Objects": [
+        Spotify.ExternalIds,
+        Spotify.ExternalUrls,
+        Spotify.Copyright,
+        Spotify.Image,
+        Spotify.Followers,
+        Spotify.AudioFeatures,
+        Spotify.Category,
+        Spotify.Context,
+        Spotify.Cursor,
+        Spotify.Error,
+        Spotify.Restrictions,
+        Spotify.Timestamp,
       ]
     ]
   end

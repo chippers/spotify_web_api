@@ -1,13 +1,13 @@
-defmodule Spotify.Models.Tracks.SavedTrack do
+defmodule Spotify.Tracks.SavedTrack do
   @moduledoc """
     A Saved Track object, holding a full track object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#saved-track-object)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Tracks
-  alias Spotify.Models.Tracks.TrackFull
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Tracks
+  alias Spotify.Tracks.TrackFull
 
   defstruct [
     :added_at,
@@ -27,7 +27,7 @@ defmodule Spotify.Models.Tracks.SavedTrack do
   end
 end
 
-defimpl Poison.Decoder, for: Spotify.Models.Tracks.SavedTrack do
+defimpl Poison.Decoder, for: Spotify.Tracks.SavedTrack do
   def decode(%{added_at: added_at} = saved_track, _options) do
     case DateTime.from_iso8601(added_at) do
       {:ok, datetime} -> %{saved_track | added_at: datetime}

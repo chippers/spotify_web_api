@@ -1,15 +1,15 @@
-defmodule Spotify.Models.Tracks.TrackFull do
+defmodule Spotify.Tracks.TrackFull do
   @moduledoc """
     A full Track object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#track-object-full)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Tracks
-  alias Spotify.Models.Tracks.TrackLink
-  alias Spotify.Models.Albums.AlbumSimple
-  alias Spotify.Models.Artists.ArtistSimple
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Tracks
+  alias Spotify.Tracks.TrackLink
+  alias Spotify.Albums.AlbumSimple
+  alias Spotify.Artists.ArtistSimple
 
   defstruct [
     :album,

@@ -1,4 +1,4 @@
-defmodule Spotify.Models.Pagings.Paging do
+defmodule Spotify.Pagings.Paging do
   @moduledoc """
     The offset-based paging object is a container for a set of objects.
 
@@ -8,7 +8,7 @@ defmodule Spotify.Models.Pagings.Paging do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#paging-object)
   """
 
-  alias Spotify.Models.Pagings
+  alias Spotify.Pagings
 
   defstruct [
     :href,

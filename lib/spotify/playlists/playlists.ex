@@ -1,15 +1,15 @@
-defmodule Spotify.Models.Playlists do
+defmodule Spotify.Playlists do
   @moduledoc """
     For manipulating playlists.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/playlists/)
   """
 
-  alias Spotify.Models.Playlists.PlaylistTrack
-  alias Spotify.Models.{ExternalUrls, Followers, Image, Timestamp}
-  alias Spotify.Models.Users.UserPublic
-  alias Spotify.Models.Pagings.Paging
-  alias Spotify.Models.Tracks.TrackFull
+  alias Spotify.Playlists.PlaylistTrack
+  alias Spotify.{ExternalUrls, Followers, Image, Timestamp}
+  alias Spotify.Users.UserPublic
+  alias Spotify.Pagings.Paging
+  alias Spotify.Tracks.TrackFull
 
   @typedoc """
     `true` if the owner allows other users to modify the playlist.

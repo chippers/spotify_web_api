@@ -1,4 +1,4 @@
-defmodule Spotify.Models.Restrictions do
+defmodule Spotify.Restrictions do
   @moduledoc """
     A Restrictions object showing why a track isn't available.
 

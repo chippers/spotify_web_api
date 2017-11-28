@@ -1,12 +1,12 @@
-defmodule Spotify.Models.Recommendations do
+defmodule Spotify.Recommendations do
   @moduledoc """
     Spotify Recommendations.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#recommendations-object)
   """
 
-  alias Spotify.Models.Recommendations.RecommendationsSeed
-  alias Spotify.Models.Tracks.TrackSimple
+  alias Spotify.Recommendations.RecommendationsSeed
+  alias Spotify.Tracks.TrackSimple
 
   @typedoc """
     An array of recommendation seed objects.

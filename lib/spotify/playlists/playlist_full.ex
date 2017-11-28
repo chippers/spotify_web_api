@@ -1,17 +1,17 @@
-defmodule Spotify.Models.Playlists.PlaylistFull do
+defmodule Spotify.Playlists.PlaylistFull do
   @moduledoc """
     A full Playlist object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#playlist-object-full)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Playlists
-  alias Spotify.Models.Playlists.PlaylistTrack
-  alias Spotify.Models.Pagings.Paging
-  alias Spotify.Models.Users.UserPublic
-  alias Spotify.Models.Followers
-  alias Spotify.Models.Image
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Playlists
+  alias Spotify.Playlists.PlaylistTrack
+  alias Spotify.Pagings.Paging
+  alias Spotify.Users.UserPublic
+  alias Spotify.Followers
+  alias Spotify.Image
 
   defstruct [
     :collaborative,

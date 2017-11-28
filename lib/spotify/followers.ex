@@ -1,11 +1,11 @@
-defmodule Spotify.Models.Followers do
+defmodule Spotify.Followers do
   @moduledoc """
     Information about the followers of the artist or user.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#followers-object)
   """
 
-  @behaviour Spotify.Models.ObjectModel
+  @behaviour Spotify.ObjectModel
 
   @typedoc """
     A link to the Web API endpoint providing full details of the followers;

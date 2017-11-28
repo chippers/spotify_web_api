@@ -1,12 +1,12 @@
-defmodule Spotify.Models.Context do
+defmodule Spotify.Context do
   @moduledoc """
    A Context object.
   
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#context-object)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.ExternalUrls
+  @behaviour Spotify.ObjectModel
+  alias Spotify.ExternalUrls
 
   @typedoc """
     The object type, e.g. `artist`, `playlist`, `album`.

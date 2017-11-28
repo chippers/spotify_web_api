@@ -1,12 +1,12 @@
-defmodule Spotify.Models.Artists.ArtistSimple do
+defmodule Spotify.Artists.ArtistSimple do
   @moduledoc """
     A simplified artist object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#artist-object-simplified)
   """
 
-  @behaviour Spotify.Models.ObjectModel
-  alias Spotify.Models.Artists
+  @behaviour Spotify.ObjectModel
+  alias Spotify.Artists
 
   defstruct [
     :external_urls,
