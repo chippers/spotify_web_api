@@ -88,10 +88,6 @@ defmodule Spotify.Users do
   @type played_at :: Timestamp.t
 
   @typedoc """
-
-
-
-
     The context the track was played from.
   """
   @type context :: Context.t
