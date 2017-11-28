@@ -1,4 +1,5 @@
 # Spotify Web API
+[![Build Status](https://travis-ci.org/chippers/spotify_web_api.svg?branch=master)](https://travis-ci.org/chippers/spotify_web_api)
 
 Library to help with accessing the Spotify Web API.
 
@@ -10,7 +11,7 @@ by adding `spotify_web_api` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:spotify_web_api, "~> 0.1.0"}
+    {:spotify_web_api, "~> 0.2.0"}
   ]
 end
 ```
