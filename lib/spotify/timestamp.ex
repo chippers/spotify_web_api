@@ -11,7 +11,7 @@ defmodule Spotify.Timestamp do
   """
 
   @typedoc """
-  An ISO 8601 represented timestamp in a string.
+    A `DateTime` if parsed sucessfully, otherwise a string`.
   """
-  @type t :: String.t
+  @type t :: DateTime.t | String.t
 end

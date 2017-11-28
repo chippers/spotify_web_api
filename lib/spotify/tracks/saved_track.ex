@@ -26,3 +26,12 @@ defmodule Spotify.Tracks.SavedTrack do
     }
   end
 end
+
+defimpl Poison.Decoder, for: Spotify.Tracks.SavedTrack do
+  def decode(%{added_at: added_at} = saved_track, _options) do
+    case DateTime.from_iso8601(added_at) do
+      {:ok, datetime} -> %{saved_track | added_at: datetime}
+      {:error, _} -> saved_track
+    end
+  end
+end
