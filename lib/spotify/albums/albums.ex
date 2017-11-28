@@ -114,8 +114,4 @@ defmodule Spotify.Albums do
     Information about the album.
   """
   @type album :: AlbumFull.t
-
-  def test do
-    File.read!("test.json")
-  end
 end
