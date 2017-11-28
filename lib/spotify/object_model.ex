@@ -1,6 +1,6 @@
 defmodule Spotify.ObjectModel do
   @moduledoc """
-    A behavior for implementing the `as/0` callback for Spotify object models
+    A behavior for implementing the `c:as/0` callback for Spotify object models
     that are returned from the web api.
   """
 
