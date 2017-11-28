@@ -1,6 +1,6 @@
 defmodule Spotify.Recommendations.Recommendations do
   @moduledoc """
-  	A Recommendations object.
+    A Recommendations object.
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#recommendations-object)
   """

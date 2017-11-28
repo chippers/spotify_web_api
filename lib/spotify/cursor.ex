@@ -2,7 +2,7 @@ defmodule Spotify.Cursor do
   @moduledoc """
     An object containing cursor information.
 
-  	[Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#cursor-object)
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#cursor-object)
   """
 
   @behaviour Spotify.ObjectModel

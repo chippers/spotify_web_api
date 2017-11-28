@@ -1,13 +1,13 @@
 defmodule Spotify.ExternalUrls do
   @moduledoc """
-   	An object that holds keys and values.
+     An object that holds keys and values.
 
     | Key   | Value Description |
     | :---- | :---------------- |
     | {key} | The type of the URL, for example: "spotify" - The Spotify URL for the object. |
-    | {value} | 	An external, public URL to the object. |
+    | {value} |   An external, public URL to the object. |
 
-  	[Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#external-url-object)
+    [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#external-url-object)
   """
 
   @typedoc """
