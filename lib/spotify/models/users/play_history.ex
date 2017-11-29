@@ -34,7 +34,7 @@ end
 defimpl Poison.Decoder, for: Spotify.Users.PlayHistory do
   def decode(%{played_at: played_at} = play_history, _options) do
     case DateTime.from_iso8601(played_at) do
-      {:ok, datetime} -> %{play_history | played_at: datetime}
+      {:ok, datetime, 0} -> %{play_history | played_at: datetime}
       {:error, _} -> play_history
     end
   end

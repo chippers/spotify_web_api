@@ -36,7 +36,7 @@ end
 defimpl Poison.Decoder, for: Spotify.Playlists.PlaylistTrack do
   def decode(%{added_at: added_at} = playlist_track, _options) do
     case DateTime.from_iso8601(added_at) do
-      {:ok, datetime} -> %{playlist_track | added_at: datetime}
+      {:ok, datetime, 0} -> %{playlist_track | added_at: datetime}
       {:error, _} -> playlist_track
     end
   end
