@@ -25,16 +25,16 @@ defmodule Spotify.Artists.ArtistFull do
 
   @typedoc "A full Artist object."
   @type t :: %__MODULE__{
-               external_urls: Artists.external_urls,
-               followers: Artists.followers,
-               genres: Artists.genres,
-               href: Artists.href,
-               id: Artists.id,
-               images: Artists.images,
-               name: Artists.name,
-               popularity: Artists.popularity,
-               type: Artists.type,
-               uri: Artists.uri,
+               external_urls: Artists.external_urls | nil,
+               followers: Artists.followers | nil,
+               genres: Artists.genres | nil,
+               href: Artists.href | nil,
+               id: Artists.id | nil,
+               images: Artists.images | nil,
+               name: Artists.name | nil,
+               popularity: Artists.popularity | nil,
+               type: Artists.type | nil,
+               uri: Artists.uri | nil,
              }
 
   def as do

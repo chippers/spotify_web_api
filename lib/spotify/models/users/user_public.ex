@@ -23,14 +23,14 @@ defmodule Spotify.Users.UserPublic do
 
   @typedoc "A public User object."
   @type t :: %__MODULE__{
-               display_name: Users.display_name,
-               external_urls: Users.external_urls,
-               followers: Users.followers,
-               href: Users.href,
-               id: Users.id,
-               images: Users.images,
-               type: Users.type,
-               uri: Users.uri,
+               display_name: Users.display_name | nil,
+               external_urls: Users.external_urls | nil,
+               followers: Users.followers | nil,
+               href: Users.href | nil,
+               id: Users.id | nil,
+               images: Users.images | nil,
+               type: Users.type | nil,
+               uri: Users.uri | nil,
              }
 
   def as do

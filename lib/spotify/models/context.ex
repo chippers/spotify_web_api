@@ -42,10 +42,10 @@ defmodule Spotify.Context do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#context-object)
   """
   @type t :: %__MODULE__{
-               type: __MODULE__.type,
-               href: __MODULE__.href,
-               external_urls: __MODULE__.external_urls,
-               uri: __MODULE__.uri,
+               type: __MODULE__.type | nil,
+               href: __MODULE__.href | nil,
+               external_urls: __MODULE__.external_urls | nil,
+               uri: __MODULE__.uri | nil,
              }
 
   def as do

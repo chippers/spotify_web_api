@@ -19,12 +19,12 @@ defmodule Spotify.Artists.ArtistSimple do
 
   @typedoc "A simplified artist object."
   @type t :: %__MODULE__{
-               external_urls: Artists.external_urls,
-               href: Artists.href,
-               id: Artists.id,
-               name: Artists.name,
-               type: Artists.type,
-               uri: Artists.uri,
+               external_urls: Artists.external_urls | nil,
+               href: Artists.href | nil,
+               id: Artists.id | nil,
+               name: Artists.name | nil,
+               type: Artists.type | nil,
+               uri: Artists.uri | nil,
              }
 
   def as do

@@ -30,8 +30,8 @@ defmodule Spotify.Error do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#error-object)
   """
   @type t :: %__MODULE__{
-               status: __MODULE__.status,
-               message: __MODULE__.message,
+               status: __MODULE__.status | nil,
+               message: __MODULE__.message | nil,
              }
 
   def as do

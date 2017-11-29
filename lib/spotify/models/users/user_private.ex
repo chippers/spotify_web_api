@@ -27,18 +27,18 @@ defmodule Spotify.Users.UserPrivate do
 
   @typedoc "A private User object."
   @type t :: %__MODULE__{
-               birthdate: Users.birthdate,
-               country: Users.country,
-               display_name: Users.display_name,
-               email: Users.email,
-               external_urls: Users.external_urls,
-               followers: Users.followers,
-               href: Users.href,
-               id: Users.id,
-               images: Users.images,
-               product: Users.product,
-               type: Users.type,
-               uri: Users.uri,
+               birthdate: Users.birthdate | nil,
+               country: Users.country | nil,
+               display_name: Users.display_name | nil,
+               email: Users.email | nil,
+               external_urls: Users.external_urls | nil,
+               followers: Users.followers | nil,
+               href: Users.href | nil,
+               id: Users.id | nil,
+               images: Users.images | nil,
+               product: Users.product | nil,
+               type: Users.type | nil,
+               uri: Users.uri | nil,
              }
 
   def as do

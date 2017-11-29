@@ -19,10 +19,10 @@ defmodule Spotify.Playlists.PlaylistTrack do
 
   @typedoc "A Playlist Track object."
   @type t :: %Spotify.Playlists.PlaylistTrack{
-               added_at: Playlists.added_at,
-               added_by: Playlists.added_by,
-               is_local: Playlists.is_local,
-               track: Playlists.track,
+               added_at: Playlists.added_at | nil,
+               added_by: Playlists.added_by | nil,
+               is_local: Playlists.is_local | nil,
+               track: Playlists.track | nil,
              }
 
   def as do

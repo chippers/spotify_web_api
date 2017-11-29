@@ -11,7 +11,7 @@ defmodule Spotify.Pagings do
   @typedoc """
     The requested data.
   """
-  @type items(item_type) :: list(item_type)
+  @type items(item_type) :: [item_type]
 
   @typedoc """
     The maximum number of items in the response (as set in the query or by default).

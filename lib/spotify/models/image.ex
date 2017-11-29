@@ -35,9 +35,9 @@ defmodule Spotify.Image do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#image-object)
   """
   @type t :: %__MODULE__{
-               height: __MODULE__.height,
-               url: __MODULE__.url,
-               width: __MODULE__.width,
+               height: __MODULE__.height | nil,
+               url: __MODULE__.url | nil,
+               width: __MODULE__.width | nil,
              }
 
   def as do

@@ -31,8 +31,8 @@ defmodule Spotify.Followers do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#followers-object)
   """
   @type t :: %__MODULE__{
-               href: __MODULE__.href,
-               total: __MODULE__.total,
+               href: __MODULE__.href | nil,
+               total: __MODULE__.total | nil,
              }
 
   def as do

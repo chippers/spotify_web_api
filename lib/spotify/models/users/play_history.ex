@@ -19,8 +19,8 @@ defmodule Spotify.Users.PlayHistory do
   @typedoc "A Play History object."
   @type t :: %__MODULE__{
                track: Users.track,
-               played_at: Users.played_at,
-               context: Users.context,
+               played_at: Users.played_at | nil,
+               context: Users.context | nil,
              }
 
   def as do

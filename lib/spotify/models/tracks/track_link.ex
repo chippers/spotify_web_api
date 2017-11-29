@@ -18,11 +18,11 @@ defmodule Spotify.Tracks.TrackLink do
 
   @typedoc "A Track Link object."
   @type t :: %__MODULE__{
-               external_urls: Tracks.external_urls,
-               href: Tracks.href,
-               id: Tracks.id,
-               type: Tracks.type,
-               uri: Tracks.uri,
+               external_urls: Tracks.external_urls | nil,
+               href: Tracks.href | nil,
+               id: Tracks.id | nil,
+               type: Tracks.type | nil,
+               uri: Tracks.uri | nil,
              }
 
   def as do

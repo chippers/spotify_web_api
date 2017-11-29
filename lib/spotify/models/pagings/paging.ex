@@ -22,13 +22,13 @@ defmodule Spotify.Pagings.Paging do
 
   @typedoc "The offset-based paging object."
   @type t(item_type) :: %__MODULE__{
-                          href: Pagings.href,
-                          items: Pagings.items(item_type),
-                          limit: Pagings.limit,
-                          next: Pagings.next,
-                          offset: Pagings.offset,
-                          previous: Pagings.previous,
-                          total: Pagings.total,
+                          href: Pagings.href | nil,
+                          items: Pagings.items(item_type) | nil,
+                          limit: Pagings.limit | nil,
+                          next: Pagings.next | nil,
+                          offset: Pagings.offset | nil,
+                          previous: Pagings.previous | nil,
+                          total: Pagings.total | nil,
                         }
 
   def wrap(struct) do

@@ -25,16 +25,16 @@ defmodule Spotify.Albums.AlbumSimple do
 
   @typedoc "A simplified album object."
   @type t :: %__MODULE__{
-               album_type: Albums.album_type,
-               artists: Albums.artists,
-               available_markets: Albums.available_markets,
-               external_urls: Albums.external_urls,
-               href: Albums.href,
-               id: Albums.id,
-               images: Albums.images,
-               name: Albums.name,
-               type: Albums.type,
-               uri: Albums.uri,
+               album_type: Albums.album_type | nil,
+               artists: Albums.artists | nil,
+               available_markets: Albums.available_markets | nil,
+               external_urls: Albums.external_urls | nil,
+               href: Albums.href | nil,
+               id: Albums.id | nil,
+               images: Albums.images | nil,
+               name: Albums.name | nil,
+               type: Albums.type | nil,
+               uri: Albums.uri | nil,
              }
 
   def as do

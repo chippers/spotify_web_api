@@ -42,10 +42,10 @@ defmodule Spotify.Category do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#category-object)
   """
   @type t :: %__MODULE__{
-               href: __MODULE__.href,
-               icons: __MODULE__.icons,
-               id: __MODULE__.id,
-               name: __MODULE__.name,
+               href: __MODULE__.href | nil,
+               icons: __MODULE__.icons | nil,
+               id: __MODULE__.id | nil,
+               name: __MODULE__.name | nil,
              }
 
   def as do

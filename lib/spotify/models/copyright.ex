@@ -30,8 +30,8 @@ defmodule Spotify.Copyright do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#copyright-object)
   """
   @type t :: %__MODULE__{
-               text: String.t,
-               type: String.t,
+               text: String.t | nil,
+               type: String.t | nil,
              }
 
   def as do

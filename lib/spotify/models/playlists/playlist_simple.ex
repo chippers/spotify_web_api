@@ -29,18 +29,18 @@ defmodule Spotify.Playlists.PlaylistSimple do
 
   @typedoc "A simplified Playlist object."
   @type t :: %__MODULE__{
-               collaborative: Playlists.collaborative,
-               external_urls: Playlists.external_urls,
-               href: Playlists.href,
-               id: Playlists.id,
-               images: Playlists.images,
-               name: Playlists.name,
-               owner: Playlists.owner,
-               public: Playlists.public,
-               snapshot_id: Playlists.snapshot_id,
-               tracks: Playlists.tracks,
-               type: Playlists.type,
-               uri: Playlists.uri,
+               collaborative: Playlists.collaborative | nil,
+               external_urls: Playlists.external_urls | nil,
+               href: Playlists.href | nil,
+               id: Playlists.id | nil,
+               images: Playlists.images | nil,
+               name: Playlists.name | nil,
+               owner: Playlists.owner | nil,
+               public: Playlists.public | nil,
+               snapshot_id: Playlists.snapshot_id | nil,
+               tracks: Playlists.tracks | nil,
+               type: Playlists.type | nil,
+               uri: Playlists.uri | nil,
              }
 
   def as do

@@ -16,8 +16,8 @@ defmodule Spotify.Albums.SavedAlbum do
 
   @typedoc "A saved Album object."
   @type t :: %__MODULE__{
-               added_at: Albums.added_at,
-               album: Albums.album,
+               added_at: Albums.added_at | nil,
+               album: Albums.album | nil,
              }
 
   def as do

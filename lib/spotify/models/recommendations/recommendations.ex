@@ -61,8 +61,8 @@ defmodule Spotify.Recommendations do
 
   @typedoc "A Recommendations object."
   @type t :: %__MODULE__{
-               seeds: Recommendations.seeds,
-               tracks: Recommendations.tracks,
+               seeds: Recommendations.seeds | nil,
+               tracks: Recommendations.tracks | nil,
              }
 
   def as do

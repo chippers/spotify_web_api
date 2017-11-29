@@ -19,12 +19,12 @@ defmodule Spotify.Recommendations.Seed do
 
   @typedoc "A Recommendations Seed object."
   @type t :: %__MODULE__{
-               afterFilteringSize: Recommendations.after_filtering_size,
-               afterRelinkingSize: Recommendations.after_relinking_size,
-               href: Recommendations.href,
-               id: Recommendations.id,
-               initialPoolSize: Recommendations.initial_pool_size,
-               type: Recommendations.type,
+               afterFilteringSize: Recommendations.after_filtering_size | nil,
+               afterRelinkingSize: Recommendations.after_relinking_size | nil,
+               href: Recommendations.href | nil,
+               id: Recommendations.id | nil,
+               initialPoolSize: Recommendations.initial_pool_size | nil,
+               type: Recommendations.type | nil,
              }
 
   def as do

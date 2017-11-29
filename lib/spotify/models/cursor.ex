@@ -23,7 +23,7 @@ defmodule Spotify.Cursor do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/object-model/#cursor-object)
   """
   @type t :: %__MODULE__{
-               after: __MODULE__.after_cursor,
+               after: __MODULE__.after_cursor | nil,
              }
 
   def as do

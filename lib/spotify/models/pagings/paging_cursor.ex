@@ -22,12 +22,12 @@ defmodule Spotify.Pagings.PagingCursor do
 
   @typedoc "The cursor-based paging object."
   @type t(item_type) :: %__MODULE__{
-                          href: Pagings.href,
-                          items: Pagings.items(item_type),
-                          limit: Pagings.limit,
-                          next: Pagings.next,
-                          cursors: Pagings.cursors,
-                          total: Pagings.total,
+                          href: Pagings.href | nil,
+                          items: Pagings.items(item_type) | nil,
+                          limit: Pagings.limit | nil,
+                          next: Pagings.next | nil,
+                          cursors: Pagings.cursors | nil,
+                          total: Pagings.total | nil,
                         }
 
   def wrap(struct) do
