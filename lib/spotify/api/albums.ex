@@ -34,7 +34,6 @@ defmodule Spotify.API.Albums do
 
     | Query Parameter | Status | Value |
     | :-------------- | :----- | :---- |
-    | ids	| **Required** | A comma-separated list of the Spotify IDs for the albums. Maximum: 20 IDs. |
     | market | **Optional** | An ISO 3166-1 alpha-2 country code. Provide this parameter if you want to apply Track Relinking. |
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/albums/get-several-albums/)
@@ -47,7 +46,8 @@ defmodule Spotify.API.Albums do
     with response <- HTTPoison.get(@base_url, headers, params: params),
          {:ok, body} <- APIHelpers.parse_response(response)
       do
-        {:ok, Poison.decode(body, as: %{"albums" => [AlbumFull.as()]})}
+        decoded = Poison.decode(body, as: %{"albums" => [AlbumFull.as()]})
+        {:ok, Map.get(decoded, "albums")}
     end
   end
 
@@ -65,7 +65,7 @@ defmodule Spotify.API.Albums do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/albums/get-albums-tracks/)
   """
   @spec get_album_tracks(Credentials.t, Spotify.spotify_id, map) :: {:ok, Paging.t(TrackSimple.t)} | APIHelpers.error_response
-  def get_album_tracks(%Credentials{} = creds, id, params) do
+  def get_album_tracks(%Credentials{} = creds, id, params \\ []) do
     headers = Credentials.format_header(creds)
 
     with response <- HTTPoison.get("#{@base_url}/#{id}/tracks", headers, params: params),

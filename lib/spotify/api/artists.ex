@@ -4,7 +4,7 @@ defmodule Spotify.API.Artists do
   alias Spotify.Pagings.Paging
   alias Spotify.Tracks.TrackFull
   alias Spotify.Albums.AlbumSimple
-  alias Spotify.Albums.ArtistFull
+  alias Spotify.Artists.ArtistFull
   alias HTTPoison.Response
   alias Spotify.API.APIHelpers
 
@@ -40,15 +40,14 @@ defmodule Spotify.API.Artists do
 
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/artists/get-artists-albums/)
   """
-  @spec get_artist_albums(Credentials.t, [Spotify.spotify_id], Keyword.t) :: {:ok, Paging.t(AlbumSimple.t)} | APIHelpers.error_response
-  def get_artist_albums(%Credentials{} = creds, ids, params \\ []) do
+  @spec get_artist_albums(Credentials.t, Spotify.spotify_id, Keyword.t) :: {:ok, Paging.t(AlbumSimple.t)} | APIHelpers.error_response
+  def get_artist_albums(%Credentials{} = creds, id, params \\ []) do
     headers = Credentials.format_header(creds)
-    params = Keyword.merge(params, ids: Enum.join(ids, ","))
 
     with response <- HTTPoison.get("#{@base_url}/#{id}/albums", headers, params: params),
          {:ok, body} <- APIHelpers.parse_response(response)
       do
-        {:ok, Poison.decode(body, as: Paging.with(AlbumSimple.as()))}
+        {:ok, Poison.decode(body, as: Paging.wrap(AlbumSimple.as()))}
     end
   end
 
@@ -68,7 +67,8 @@ defmodule Spotify.API.Artists do
     with response <- HTTPoison.get("#{@base_url}/#{id}/top-tracks", headers, params: params),
          {:ok, body} <- APIHelpers.parse_response(response)
       do
-        {:ok, Poison.decode(body, as: %{"tracks" => [TrackFull.as()]})}
+        decoded = Poison.decode(body, as: %{"tracks" => [TrackFull.as()]})
+        {:ok, Map.get(decoded, "tracks")}
     end
   end
 
@@ -80,13 +80,14 @@ defmodule Spotify.API.Artists do
     [Spotify Docs](https://beta.developer.spotify.com/documentation/web-api/reference/artists/get-related-artists/)
   """
   @spec get_artist_related_artists(Credentials.t, Spotify.spotify_id, map) :: {:ok, [ArtistFull.t]} | APIHelpers.error_response
-  def get_artist_related_artists(%Credentials{} = creds, id, params) do
+  def get_artist_related_artists(%Credentials{} = creds, id, params \\ []) do
     headers = Credentials.format_header(creds)
 
     with response <- HTTPoison.get("#{@base_url}/#{id}/related-artists", headers, params: params),
          {:ok, body} <- APIHelpers.parse_response(response)
       do
-        {:ok, Poison.decode(body, as: %{"artists" => [ArtistFull.as()]})}
+        decoded = Poison.decode(body, as: %{"artists" => [ArtistFull.as()]})
+        {:ok, Map.get(decoded, "artists")}
     end
   end
 
@@ -103,7 +104,8 @@ defmodule Spotify.API.Artists do
     with response <- HTTPoison.get(@base_url, headers, params: params),
          {:ok, body} <- APIHelpers.parse_response(response)
       do
-      {:ok, Poison.decode(body, as: %{"artists" => [AlbumFull.as()]})}
+        decoded = Poison.decode(body, as: %{"artists" => [AlbumFull.as()]})
+        {:ok, Map.get(decoded, "artists")}
     end
   end
 end
