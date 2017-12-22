@@ -8,7 +8,7 @@ defmodule Spotify.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
-      description: "Library to help with accessing the Spotify Web API.",
+      description: "Library to help map the Spotify Web API returns to structs.",
 
       name: "Spotify Web API",
       docs: [
@@ -37,7 +37,6 @@ defmodule Spotify.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:httpoison, "~> 0.13"},
       {:poison, "~> 3.1"},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
@@ -56,14 +55,14 @@ defmodule Spotify.Mixfile do
       "Artists": [
         Spotify.Artists,
         Spotify.Artists.ArtistFull,
-        Spotify.Artists.ArtistSimple
+        Spotify.Artists.ArtistSimple,
       ],
       "Tracks": [
         Spotify.Tracks,
         Spotify.Tracks.TrackFull,
         Spotify.Tracks.TrackSimple,
         Spotify.Tracks.TrackLink,
-        Spotify.Tracks.SavedTrack
+        Spotify.Tracks.SavedTrack,
       ],
 
       "Pagings": [
@@ -85,7 +84,7 @@ defmodule Spotify.Mixfile do
         Spotify.Users,
         Spotify.Users.UserPrivate,
         Spotify.Users.UserPublic,
-        Spotify.Users.PlayHistory
+        Spotify.Users.PlayHistory,
       ],
       "Miscellaneous Objects": [
         Spotify.ExternalIds,
@@ -100,6 +99,7 @@ defmodule Spotify.Mixfile do
         Spotify.Error,
         Spotify.Restrictions,
         Spotify.Timestamp,
+        Spotify.Credentials,
       ]
     ]
   end

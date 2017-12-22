@@ -22,10 +22,14 @@ defmodule Spotify.Credentials do
                refresh_token: String.t,
              }
 
+  def as do
+    %__MODULE__{}
+  end
+
   @doc """
     Format credentials into a HTTP Header tuple for authorization use.
   """
-  @spec format_header(t) :: HTTPoison.headers
+  @spec format_header(t) :: {String.t, String.t}
   def format_header(%__MODULE__{} = creds) do
     [{"Authorization", "Bearer " <> creds.access_token}]
   end
