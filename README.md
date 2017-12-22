@@ -11,7 +11,7 @@ by adding `spotify_web_api` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:spotify_web_api, "~> 0.2.0"}
+    {:spotify_web_api, "~> 0.3"}
   ]
 end
 ```
