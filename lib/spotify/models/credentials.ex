@@ -31,6 +31,6 @@ defmodule Spotify.Credentials do
   """
   @spec format_header(t) :: {String.t, String.t}
   def format_header(%__MODULE__{} = creds) do
-    [{"Authorization", "Bearer " <> creds.access_token}]
+    {"Authorization", "Bearer " <> creds.access_token}
   end
 end
