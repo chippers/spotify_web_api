@@ -4,7 +4,7 @@ defmodule Spotify.Mixfile do
   def project do
     [
       app: :spotify_web_api,
-      version: "0.2.3",
+      version: "0.3.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
